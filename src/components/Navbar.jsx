@@ -5,7 +5,7 @@ const links = ["Home", "World", "Business", "Markets", "Opinion", "Tech"];
 
 const Navbar = () => {
   return (
-    <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+    <Box bg="#f3f2ef" px={4}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={8} alignItems={"center"}>
           {links.map((link) => (
