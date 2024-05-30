@@ -1,18 +1,47 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
+import { Container, Box, Flex, VStack, Heading, Text, Image } from "@chakra-ui/react";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
 
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+const articles = [
+  {
+    title: "Breaking News: Market Hits Record Highs",
+    description: "The stock market reached new heights today as investors reacted positively to the latest economic data.",
+    imageUrl: "https://via.placeholder.com/150",
+  },
+  {
+    title: "Tech Giants Release New Gadgets",
+    description: "Several major tech companies unveiled their latest products at the annual tech conference.",
+    imageUrl: "https://via.placeholder.com/150",
+  },
+  {
+    title: "Global Politics: New Trade Agreements",
+    description: "Countries around the world are negotiating new trade deals to boost their economies.",
+    imageUrl: "https://via.placeholder.com/150",
+  },
+];
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
+    <Container maxW="container.xl">
+      <Navbar />
+      <Flex direction={{ base: "column", md: "row" }} mt={4}>
+        <Box flex="3" mr={{ md: 4 }}>
+          <VStack spacing={8}>
+            {articles.map((article, index) => (
+              <Box key={index} p={5} shadow="md" borderWidth="1px" borderRadius="md">
+                <Image src={article.imageUrl} alt={article.title} mb={4} />
+                <Heading fontSize="xl">{article.title}</Heading>
+                <Text mt={4}>{article.description}</Text>
+              </Box>
+            ))}
+          </VStack>
+        </Box>
+        <Box flex="1" mt={{ base: 4, md: 0 }}>
+          <Sidebar />
+        </Box>
+      </Flex>
+      <Footer />
     </Container>
   );
 };
