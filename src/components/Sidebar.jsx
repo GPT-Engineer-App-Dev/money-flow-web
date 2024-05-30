@@ -2,7 +2,7 @@ import { Box, Heading, VStack, Text, Link } from "@chakra-ui/react";
 
 const Sidebar = () => {
   return (
-    <Box as="aside" w="full" p={4} bg="gray.50" borderRadius="md">
+    <Box as="aside" w="full" p={4} bg="#f3f2ef" borderRadius="md">
       <Heading as="h3" size="lg" mb={4}>
         Trending Topics
       </Heading>

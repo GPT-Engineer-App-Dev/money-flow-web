@@ -23,7 +23,7 @@ const articles = [
 
 const Index = () => {
   return (
-    <Container maxW="container.xl">
+    <Container maxW="container.xl" bg="#f3f2ef">
       <Navbar />
       <Flex direction={{ base: "column", md: "row" }} mt={4}>
         <Box flex="3" mr={{ md: 4 }}>
